@@ -37,6 +37,7 @@ const allTrees = () => {
 const loadAllTrees = (trees) => {
 
     const treesContainer = document.getElementById("all-trees");
+    treesContainer.innerHTML = ""; // Clear previous cards
 
     // category
     // :"Ornamental Plant"
@@ -48,18 +49,22 @@ const loadAllTrees = (trees) => {
 
     for (let tree of trees) {
         // console.log(tree);
-        const cardInfo=document.createElement("div")
-        cardInfo.innerHTML=`
-        <div class="bg-white p-4 rounded-lg">
-                        <img src="${tree.image}" alt="" class="w-full h-52 object-cover rounded-lg">
-                        <h1 class="font-semibold text-xl mt-2">${tree.name}</h1>
-                        <p class="font-normal text-sm mt-3">${tree.description}</p>
+        const cardInfo = document.createElement("div")
+
+        cardInfo.innerHTML = `
+        <div class="bg-white rounded-lg">
+                        <img src="${tree.image}" alt="" class="w-full h-52 object-cover rounded-t-lg">
+                        <div class="p-4">
+                        <h1 class="font-bold text-xl ">${tree.name}</h1>
+                        <p class="font-normal text-sm mt-2 line-clamp-3">${tree.description}</p>
                         <div class="flex justify-between items-center mt-2">
-                            <h2 class="text-[#15803D] bg-[#CFF0DC] px-2 font-semibold rounded-xl">${tree.category}</h2>
-                            <h2 class="font-semibold text-lg">${tree.price}</h2>
+                            <h2 class="text-[#15803D] bg-[#CFF0DC] px-2 text-sm  font-semibold rounded-xl">${tree.category}</h2>
+                            <h2 class="font-bold text-lg text-[#15803D]">৳${tree.price}</h2>
                         </div>
                         <button class="btn w-full rounded-full bg-[#15803D] text-white mt-3">
                             Add to Cart</button>
+                        </div> 
+                        
                     </div>
         `
         treesContainer.append(cardInfo);

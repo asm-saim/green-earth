@@ -1,4 +1,4 @@
-// category function
+//1. category function
 const callCategories = () => {
     const url = "https://openapi.programming-hero.com/api/categories"
     fetch(url)
@@ -6,7 +6,8 @@ const callCategories = () => {
         .then(data => loadCategory(data.categories))
 }
 
-//category function load
+
+//1.load category function 
 const loadCategory = (names) => {
     const categoriesBox = document.getElementById("categories");
     // {id: 8, category_name: 'Bamboo', small_description: 'Fast-growing versatile plants with woody stems.'}
@@ -14,7 +15,7 @@ const loadCategory = (names) => {
         // console.log(name)
         const divForCategory = document.createElement("div")
         divForCategory.innerHTML = `<div class="mx-3 my-2">
-        <button class="btn btn-sm w-full justify-start bg-transparent shadow-none border-none
+        <button onclick="loadCategoryCard(${name.id})" class="btn btn-sm w-full justify-start bg-transparent shadow-none border-none
         hover:bg-[#15803D] hover:text-white text-base font-medium">${name.category_name}</button>
         </div>`
 
@@ -25,7 +26,7 @@ const loadCategory = (names) => {
 callCategories();
 
 
-//all trees function:
+//2.all trees function:
 const allTrees = () => {
     const url = "https://openapi.programming-hero.com/api/plants";
     fetch(url)
@@ -33,7 +34,7 @@ const allTrees = () => {
         .then(data => loadAllTrees(data.plants))
 };
 
-//load all trees
+//2.load all trees
 const loadAllTrees = (trees) => {
 
     const treesContainer = document.getElementById("all-trees");
@@ -53,7 +54,7 @@ const loadAllTrees = (trees) => {
 
         cardInfo.innerHTML = `
         <div class="bg-white rounded-lg">
-                        <img src="${tree.image}" alt="" class="w-full h-52 object-cover rounded-t-lg">
+                        <img src="${tree.image}" alt="" class="w-full h-45 object-cover rounded-t-lg">
                         <div class="p-4">
                         <h1 class="font-bold text-xl ">${tree.name}</h1>
                         <p class="font-normal text-sm mt-2 line-clamp-3">${tree.description}</p>
@@ -74,3 +75,14 @@ const loadAllTrees = (trees) => {
 
 allTrees();
 
+// 3.Load by category:
+const loadCategoryCard = (id) => {
+
+    const url = `https://openapi.programming-hero.com/api/category/${id}`
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            loadAllTrees(data.plants)
+        })
+
+}

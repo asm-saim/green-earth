@@ -115,3 +115,4 @@ const loadAllCategory = () => {
 
     allTrees();
 };
+loadAllCategory();

@@ -14,8 +14,10 @@ const loadCategory = (names) => {
     for (let name of names) {
         // console.log(name)
         const divForCategory = document.createElement("div")
-        divForCategory.innerHTML = `<div class="mx-3 my-2">
-        <button onclick="loadCategoryCard(${name.id})" class="btn btn-sm w-full justify-start bg-transparent shadow-none border-none
+        divForCategory.innerHTML = ` 
+        <div class="mx-3 my-2">
+        <button onclick="loadCategoryCard(${name.id})" id="btn-category-${name.id}"
+         class="btn-category btn btn-sm w-full justify-start bg-transparent shadow-none border-none
         hover:bg-[#15803D] hover:text-white text-base font-medium">${name.category_name}</button>
         </div>`
 
@@ -78,11 +80,27 @@ allTrees();
 // 3.Load by category:
 const loadCategoryCard = (id) => {
 
+    removeActive();
+
+    document
+        .getElementById(`btn-category-${id}`)
+        .classList.add("active-category");
+
+
     const url = `https://openapi.programming-hero.com/api/category/${id}`
     fetch(url)
         .then(res => res.json())
         .then(data => {
             loadAllTrees(data.plants)
         })
+}
 
+// 4.set active btn:
+const removeActive = () => {
+    const removeActiveCategory = document.querySelectorAll(".btn-category")
+
+    removeActiveCategory.forEach(btn => {
+        btn.classList.remove("active-category")
+        btn.classList.add("bg-transparent", "shadow-none", "border-none")
+    })
 }

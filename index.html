@@ -16,16 +16,12 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-        .active-category {
-            background-color: #15803D !important;
-            color: white !important;
-        }
-    </style>
+    <!-- style -->
+    <link rel="stylesheet" href="./style/style.css">
 
 </head>
 
-<body>
+<body class="font-inter">
     <!-- navbar -->
     <div class="navbar bg-base-100 shadow-sm px-16 bg-[#15803D]">
         <div class="navbar-start">
@@ -64,7 +60,7 @@
     </div>
 
     <!-- banner -->
-    <section class="bg-[#CFF0DC] flex flex-col md:flex-row items-center">
+    <section class="bg-[#cff0dc] flex flex-col md:flex-row items-center pt-10">
         <div class="w-4/12"><img src="./assets/hero-leaf1.png" alt=""></div>
 
         <div class="w-6/12 text-center space-y-2">
@@ -82,14 +78,14 @@
     </section>
 
     <!-- card section -->
-    <section class="bg-[#CFF0DC]">
-        <h1 class="text-center font-bold text-3xl pt-20 px-2">Choose Your Trees
+    <section class="bg-[#f0fdf4]">
+        <h1 class="text-center font-semibold  text-3xl pt-20 px-2">Choose Your Trees
         </h1>
         <div class="grid grid-cols-12 border border-gray-900 py-10 mx-16">
             <!-- Categories -->
-            <div id="categories" class="border border-red-600 col-span-2">
+            <div id="categories" class="col-span-2">
                 <h1 class="text-lg font-bold p-2">Categories</h1>
-                <div class="mx-3 my-2">
+                <div class="mx-3 my-1">
                     <button id="btn-category-all" onclick="loadAllCategory()" class="btn-category btn btn-sm w-full justify-start bg-transparent shadow-none border-none
         hover:bg-[#15803D] hover:text-white text-base font-medium">All Category</button>
                 </div>

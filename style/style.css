@@ -1,0 +1,8 @@
+.font-inter {
+    font-family: "Inter", sans-serif;
+}
+
+.active-category {
+    background-color: #15803D !important;
+    color: white !important;
+}

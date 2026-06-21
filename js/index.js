@@ -15,7 +15,7 @@ const loadCategory = (names) => {
         // console.log(name)
         const divForCategory = document.createElement("div")
         divForCategory.innerHTML = ` 
-        <div class="mx-3 my-2">
+        <div class="mx-3 my-1">
         <button onclick="loadCategoryCard(${name.id})" id="btn-category-${name.id}"
          class="btn-category btn btn-sm w-full justify-start bg-transparent shadow-none border-none
         hover:bg-[#15803D] hover:text-white text-base font-medium">${name.category_name}</button>

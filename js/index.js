@@ -104,3 +104,14 @@ const removeActive = () => {
         btn.classList.add("bg-transparent", "shadow-none", "border-none")
     })
 }
+
+// 5.load all category btn:
+const loadAllCategory = () => {
+    removeActive();
+
+    document
+        .getElementById("btn-category-all")
+        .classList.add("active-category");
+
+    allTrees();
+};

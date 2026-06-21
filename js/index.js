@@ -14,7 +14,7 @@ const loadCategory = (names) => {
         // console.log(name)
         const divForCategory = document.createElement("div")
         divForCategory.innerHTML = `<div class="mx-3 my-2">
-        <button class="btn btn-sm w-full justify-start 
+        <button class="btn btn-sm w-full justify-start bg-transparent shadow-none border-none
         hover:bg-[#15803D] hover:text-white text-base font-medium">${name.category_name}</button>
         </div>`
 
@@ -22,7 +22,13 @@ const loadCategory = (names) => {
     }
 
 }
-
-
-
 callCategories();
+
+
+//all trees function:
+const allTrees = () => {
+    const url = "https://openapi.programming-hero.com/api/plants";
+    fetch(url)
+        .then(res => res.json())
+        .then(data => console.log(data))
+}

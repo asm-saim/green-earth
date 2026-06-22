@@ -138,15 +138,15 @@
         <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <h1 class="text-center font-semibold text-3xl mb-8">Our Impact</h1>
             <div class="grid grid-cols-3 items-center gap-10">
-                <div class="bg-white text-center py-5 rounded-xl">
+                <div class="bg-white text-center py-8 rounded-xl">
                     <h1 class="font-bold text-3xl text-[#15803D]">500K+</h1>
                     <p>Trees Planted</p>
                 </div>
-                <div class="bg-white text-center py-5 rounded-xl">
+                <div class="bg-white text-center py-8 rounded-xl">
                     <h1 class="font-bold text-3xl text-[#15803D]">120+</h1>
                     <p>Communities Involved</p>
                 </div>
-                <div class="bg-white text-center py-5 rounded-xl">
+                <div class="bg-white text-center py-8 rounded-xl">
                     <h1 class="font-bold text-3xl text-[#15803D]">30+</h1>
                     <p>Countries Reached</p>
                 </div>
@@ -164,16 +164,22 @@
             <h1 class="text-center font-semibold text-white text-3xl mb-8">
                 Plant a Tree Today</h1>
             <div class="">
-                <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs p-4 mx-auto bg-[#15803D]">
-                    <legend class="fieldset-legend"></legend>
+                <fieldset
+                    class="fieldset bg-base-200 border-base-300 rounded-box w-xs p-7 mx-auto bg-[#15803D] space-y-3">
+                    <input type="text" class="input" placeholder="Your Name" />
 
-                    <label class="label">Email</label>
-                    <input type="email" class="input" placeholder="Email" />
+                    <input type="email" class="input" placeholder="Email Address" />
 
-                    <label class="label">Password</label>
-                    <input type="password" class="input" placeholder="Password" />
+                    <select class="select">
+                        <option disabled selected>Number of Trees</option>
+                        <option>1 Tree - $5</option>
+                        <option>5 Tree - $25</option>
+                        <option>10 Tree - $50</option>
+                    </select>
 
-                    <button class="btn btn-neutral mt-4">Login</button>
+                    <button
+                        class="btn btn-neutral font-semibold border-none shadow-none rounded-full text-[#15803D] bg-[#FACC15]">Donate
+                        Now</button>
                 </fieldset>
             </div>
         </div>

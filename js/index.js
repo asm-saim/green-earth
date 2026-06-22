@@ -170,6 +170,9 @@ const findCardInfo = (info) => {
     totalPrice += info.price;
     document.getElementById("total-price").innerText = totalPrice;
 
+    // total is showed when add to cart clicked:
+    document.getElementById("cart-summary").classList.remove("hidden")
+
     const cardForCalc = document.createElement("div")
     cardForCalc.innerHTML = `
         <div class="mx-2 my-3 p-2 rounded-xl bg-[#f0fdf4]">

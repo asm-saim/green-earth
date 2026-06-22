@@ -175,12 +175,33 @@ const findCardInfo = (info) => {
 
     const cardForCalc = document.createElement("div")
     cardForCalc.innerHTML = `
-        <div class="mx-2 my-3 p-2 rounded-xl bg-[#f0fdf4]">
-        <h1 class="font-bold text-base">${info.name}</h1>
-        <h2><span class="font-bold text-sm">Price:</span> ৳${info.price}</h2>  
+        <div class="mx-2 my-3 p-2 rounded-xl bg-[#f0fdf4] flex items-center justify-between ">
+        <div>
+        <h1 class="font-bold text-gray-700 text-base">${info.name}</h1>
+        <h2><span class="font-bold text-gray-700 text-sm">Price:</span> ৳${info.price}</h2>
+        </div>
+        
+        <button onclick="removeCart(this,${info.price})">
+        <i class="fa-regular fa-circle-xmark text-xl"></i></button> 
+        
+         
         </div>
         `
     yourCartSection.append(cardForCalc);
 }
 
+//create remove Cart logo:
 
+const removeCart = (button, price) => {
+    //remove price
+    totalPrice -= price;
+    document.getElementById("total-price").innerText = totalPrice
+
+    //remove cart
+    button.parentElement.remove();
+
+    // Hide total if cart is empty
+    if (totalPrice === 0) {
+        document.getElementById("cart-summary").classList.add("hidden");
+    }
+}

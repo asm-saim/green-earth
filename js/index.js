@@ -58,7 +58,7 @@ const loadAllTrees = (trees) => {
         <div class="bg-white rounded-lg">
                         <img src="${tree.image}" alt="" class="w-full h-45 object-cover rounded-t-lg">
                         <div class="p-4">
-                        <h1 class="font-bold text-xl ">${tree.name}</h1>
+                        <h1 onClick="onNameClick(${tree.id})" class="font-bold text-xl ">${tree.name}</h1>
                         <p class="font-normal text-sm mt-2 line-clamp-3">${tree.description}</p>
                         <div class="flex justify-between items-center mt-2">
                             <h2 class="text-[#15803D] bg-[#CFF0DC] px-2 text-sm  font-semibold rounded-xl">${tree.category}</h2>
@@ -116,3 +116,15 @@ const loadAllCategory = () => {
     allTrees();
 };
 loadAllCategory();
+
+
+// 6.plants details:
+const onNameClick = async (id) => {
+
+    const url = `https://openapi.programming-hero.com/api/plant/${id}`
+    console.log(url)
+    const res = await fetch(url)
+    const data = await res.json()
+    console.log(data.plants);
+
+}

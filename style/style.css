@@ -6,3 +6,7 @@
     background-color: #15803D !important;
     color: white !important;
 }
+
+html {
+    scrollbar-gutter: stable;
+}

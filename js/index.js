@@ -1,3 +1,5 @@
+let totalPrice = 0;
+
 //1. category function
 const callCategories = () => {
     const url = "https://openapi.programming-hero.com/api/categories"
@@ -55,7 +57,7 @@ const loadAllTrees = (trees) => {
         const cardInfo = document.createElement("div")
 
         cardInfo.innerHTML = `
-        <div class="bg-white rounded-lg">
+        <div class="bg-white rounded-lg shadow-lg">
                         <img src="${tree.image}" alt="" class="w-full h-45 object-cover rounded-t-lg">
                         <div class="p-4">
                         <h1 onClick="onNameClick(${tree.id})" class="font-bold text-xl ">${tree.name}</h1>
@@ -64,7 +66,7 @@ const loadAllTrees = (trees) => {
                             <h2 class="text-[#15803D] bg-[#CFF0DC] px-2 text-sm  font-semibold rounded-xl">${tree.category}</h2>
                             <h2 class="font-bold text-lg text-[#15803D]">৳${tree.price}</h2>
                         </div>
-                        <button class="btn w-full rounded-full bg-[#15803D] text-white mt-3">
+                        <button onclick="addToCart(${tree.id})" class="btn w-full rounded-full bg-[#15803D] text-white mt-3">
                             Add to Cart</button>
                         </div> 
                         
@@ -149,5 +151,33 @@ const plantsDetail = (values) => {
         </div> 
        `
     document.getElementById("my_modal_5").showModal()
+};
+
+//7. add to cart section:
+const addToCart = async (id) => {
+    const url = `https://openapi.programming-hero.com/api/plant/${id}`
+    const res = await fetch(url)
+    const data = await res.json()
+    // console.log(data.plants)
+
+    findCardInfo(data.plants)
 }
+
+const findCardInfo = (info) => {
+
+    const yourCartSection = document.getElementById("your-cart");
+
+    totalPrice += info.price;
+    document.getElementById("total-price").innerText = totalPrice;
+
+    const cardForCalc = document.createElement("div")
+    cardForCalc.innerHTML = `
+        <div class="mx-2 my-3 p-2 rounded-xl bg-[#f0fdf4]">
+        <h1 class="font-bold text-base">${info.name}</h1>
+        <h2><span class="font-bold text-sm">Price:</span> ৳${info.price}</h2>  
+        </div>
+        `
+    yourCartSection.append(cardForCalc);
+}
+
 

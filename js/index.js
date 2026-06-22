@@ -126,5 +126,28 @@ const onNameClick = async (id) => {
     const res = await fetch(url)
     const data = await res.json()
     console.log(data.plants);
+    plantsDetail(data.plants)
+};
+// Object
+// category:"Flowering Tree"
+// description:"A striking ornamental tree famous for its brilliant orange-red blossoms. Its wide canopy adds a festive charm to parks and roadsides."
+// id:6
+// image:"https://i.ibb.co.com/MxPrt83c/Krishnachura-min.jpg"
+// name:"Krishnachura"
+// price:450
 
+
+const plantsDetail = (values) => {
+    const showPlantsDetail = document.getElementById("plants-detail")
+    showPlantsDetail.innerHTML = `
+        <div class="space-y-3">
+       <h1 class="font-bold text-xl my-2 m">${values.name}</h1>
+        <img src="${values.image}" class="w-full h-55 object-cover rounded-lg alt="">
+        <h2><span class="font-bold">Category:</span> ${values.category}</h2>
+        <h2><span class="font-bold">Price:</span> ৳${values.price}</h2>
+        <p><span class="font-bold">Description:</span> ${values.description}</p>             
+        </div> 
+       `
+    document.getElementById("my_modal_5").showModal()
 }
+

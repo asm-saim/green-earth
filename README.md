@@ -111,7 +111,7 @@ The project was built with a strong focus on **API integration, dynamic DOM mani
 - Store cart data using local storage
 - Add search functionality for plants
 - Add dark mode support
-- Improve filtering with multiple categories
+- Add smooth scroll/routing for About, Gallery, and Plant Tree sections.
 - Add backend integration for orders and users
 
 ---

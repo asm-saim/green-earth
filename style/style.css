@@ -10,3 +10,10 @@
 html {
     scrollbar-gutter: stable;
 }
+
+/* for navbar centred items */
+/* .navbar .menu li>a:hover,
+.navbar .menu li>a:focus,
+.navbar .menu li>a:active {
+    background-color: #15803d;
+}  */

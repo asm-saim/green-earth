@@ -1,4 +1,4 @@
-<img src="./assets/logo.png" width="100" style="background:white;padding:10px;border-radius:8px;"/>
+<img src="./assets/tree-logo.png" width="100" style="background:white;padding:10px;border-radius:8px;"/>
 
 # Green Earth
 
@@ -43,11 +43,6 @@ The project was built with a strong focus on **API integration, dynamic DOM mani
 ---
 
 ## Features
-
-- **Responsive Navigation Bar** — Displays logo, menu items, and "Plant a Tree" button across all devices.
-- **Hero Banner Section** — Full background image with centered title, subtitle, and CTA button.
-- **About Campaign Section** — Two-column layout with image and description.
-- **Our Impact Section** — Displays campaign statistics using interactive cards.
 - **Plant Directory System** — Dynamically loads plant data from API in a responsive grid layout.
 - **Category Filtering System** — Allows users to filter plants by category dynamically.
 - **Plant Details Modal** — Shows full plant information when a plant card is clicked.
@@ -55,6 +50,10 @@ The project was built with a strong focus on **API integration, dynamic DOM mani
 - **Total Price Calculation** — Dynamically calculates total price of selected plants.
 - **Remove from Cart Feature** — Users can remove items and update total instantly.
 - **Loading Spinner** — Displays loader while fetching API data.
+- **Responsive Navigation Bar** — Displays logo, menu items, and "Plant a Tree" button across all devices.
+- **Hero Banner Section** — Full background image with centered title, subtitle, and CTA button.
+- **About Campaign Section** — Two-column layout with image and description.
+- **Our Impact Section** — Displays campaign statistics using interactive cards.
 - **Active Category Highlight** — Highlights selected category button.
 - **Fully Responsive Layout** — Optimized for mobile, tablet, and desktop devices.
 
@@ -81,7 +80,7 @@ The project was built with a strong focus on **API integration, dynamic DOM mani
   </tr>
   <tr>
     <td><img src="./screenshots/home.png" alt="Home Page"></td>
-    <td><img src="./screenshots/plants.png" alt="Plant Cards Section"></td>
+    <td><img src="./screenshots/cart-section.png" alt="Plant Cards Section"></td>
   </tr>
   <tr>
     <td align="center"><b>Cart & Modal View</b></td>
@@ -89,7 +88,7 @@ The project was built with a strong focus on **API integration, dynamic DOM mani
   </tr>
   <tr>
     <td><img src="./screenshots/modal.png" alt="Modal View"></td>
-    <td><img src="./screenshots/mobile.png" alt="Mobile View"></td>
+    <td><img src="./screenshots/mobile-view.png" alt="Mobile View"></td>
   </tr>
 </table>
 

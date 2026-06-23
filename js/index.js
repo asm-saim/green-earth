@@ -1,5 +1,15 @@
 let totalPrice = 0;
 
+// 8. spinner
+const loadSpinner = (status) => {
+    if (status == true) {
+        document.getElementById("spinner-id").classList.remove("hidden")
+    }
+    else {
+        document.getElementById("spinner-id").classList.add("hidden")
+    }
+}
+
 //1. category function
 const callCategories = () => {
     const url = "https://openapi.programming-hero.com/api/categories"
@@ -17,7 +27,7 @@ const loadCategory = (names) => {
         // console.log(name)
         const divForCategory = document.createElement("div")
         divForCategory.innerHTML = ` 
-        <div class="mx-3 my-1">
+        <div class="mx-3 my-2">
         <button onclick="loadCategoryCard(${name.id})" id="btn-category-${name.id}"
          class="btn-category btn btn-sm w-full justify-start bg-transparent shadow-none border-none
         hover:bg-[#15803D] hover:text-white text-base font-medium">${name.category_name}</button>
@@ -32,10 +42,13 @@ callCategories();
 
 //2.all trees function:
 const allTrees = () => {
+    loadSpinner(true)
     const url = "https://openapi.programming-hero.com/api/plants";
     fetch(url)
         .then(res => res.json())
         .then(data => loadAllTrees(data.plants))
+        .finally(() => loadSpinner(false));
+
 };
 
 //2.load all trees
@@ -81,9 +94,8 @@ allTrees();
 
 // 3.Load by category:
 const loadCategoryCard = (id) => {
-    
+
     loadSpinner(true)
-    
     removeActive();
 
     document
@@ -92,13 +104,12 @@ const loadCategoryCard = (id) => {
 
 
     const url = `https://openapi.programming-hero.com/api/category/${id}`
-    fetch(url)
+    const res = fetch(url)
         .then(res => res.json())
-        .then(data => {
-            loadAllTrees(data.plants)
-            loadSpinner(false)
-        })
-        
+        .then(data => loadAllTrees(data.plants))
+        .finally(() => loadSpinner(false));
+
+
 }
 
 // 4.set active btn:
@@ -210,13 +221,4 @@ const removeCart = (button, price) => {
     }
 }
 
-// 8. spinner
 
-const loadSpinner = (status)=>{
-    if(status==true){
-        document.getElementById("spinner-id").classList.remove("hidden")
-    }
-    else{
-        document.getElementById("spinner-id").classList.add("hidden")
-    }
-}

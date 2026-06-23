@@ -1,4 +1,4 @@
-<img src="./assets/tree-logo.png" width="100" style="background:white;padding:10px;border-radius:8px;"/>
+<img src="./assets/tree-logo.png" width="100" style=""/>
 
 # Green Earth
 

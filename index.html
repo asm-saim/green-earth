@@ -81,11 +81,16 @@
     <section class="bg-[#f0fdf4]">
         <h1 class="text-center font-semibold  text-3xl pt-20 px-2">Choose Your Trees
         </h1>
+        <!-- spinner -->
+        <div id="spinner-id" class="text-center my-5 hidden">
+            <span class="loading loading-bars loading-xl"></span>
+        </div>
+        <!-- -->
         <div class="grid grid-cols-12 border gap-1 border-gray-900 py-10 mx-16">
             <!-- Categories -->
             <div id="categories" class="col-span-2">
                 <h1 class="text-lg font-bold p-2">Categories</h1>
-                <div class="mx-3 my-1">
+                <div class="mx-3 my-2">
                     <button id="btn-category-all" onclick="loadAllCategory()" class="btn-category btn btn-sm w-full justify-start bg-transparent shadow-none border-none
         hover:bg-[#15803D] hover:text-white text-base font-medium">All Category</button>
                 </div>
@@ -100,7 +105,7 @@
             </div>
 
             <!-- Calculation -->
-            <div class="bg-white col-span-2 rounded-xl">
+            <div class="bg-white col-span-2 rounded-xl mt-2">
                 <h1 class="text-lg font-bold m-3 ">Your Cart</h1>
                 <div id="your-cart" class="">
 

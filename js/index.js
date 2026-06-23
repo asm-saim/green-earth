@@ -81,7 +81,9 @@ allTrees();
 
 // 3.Load by category:
 const loadCategoryCard = (id) => {
-
+    
+    loadSpinner(true)
+    
     removeActive();
 
     document
@@ -94,7 +96,9 @@ const loadCategoryCard = (id) => {
         .then(res => res.json())
         .then(data => {
             loadAllTrees(data.plants)
+            loadSpinner(false)
         })
+        
 }
 
 // 4.set active btn:
@@ -176,7 +180,7 @@ const findCardInfo = (info) => {
     const cardForCalc = document.createElement("div")
     cardForCalc.innerHTML = `
         <div class="mx-2 my-3 p-2 rounded-xl bg-[#f0fdf4] flex items-center justify-between ">
-        <div>
+        <div class="space-y-1">
         <h1 class="font-bold text-gray-700 text-base">${info.name}</h1>
         <h2><span class="font-bold text-gray-700 text-sm">Price:</span> ৳${info.price}</h2>
         </div>
@@ -190,7 +194,7 @@ const findCardInfo = (info) => {
     yourCartSection.append(cardForCalc);
 }
 
-//create remove Cart logo:
+//create remove logo in the calc cart:
 
 const removeCart = (button, price) => {
     //remove price
@@ -203,5 +207,16 @@ const removeCart = (button, price) => {
     // Hide total if cart is empty
     if (totalPrice === 0) {
         document.getElementById("cart-summary").classList.add("hidden");
+    }
+}
+
+// 8. spinner
+
+const loadSpinner = (status)=>{
+    if(status==true){
+        document.getElementById("spinner-id").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("spinner-id").classList.add("hidden")
     }
 }
